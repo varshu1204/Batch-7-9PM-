@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Test2(failed)">
+    <parameter name="BROWSER" value="Firefox"/>
+    <classes>
+      <class name="Product.ProductTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="toCreateProductTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Product.ProductTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
