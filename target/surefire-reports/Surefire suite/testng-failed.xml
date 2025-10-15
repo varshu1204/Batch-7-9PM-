@@ -3,10 +3,21 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="Campaign.CampaignTest">
+      <class name="Product.ProductTest">
         <methods>
           <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="toCreateProductTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Product.ProductTest -->
+      <class name="Campaign.CampaignTest">
+        <methods>
           <include name="toCreateCampaignWithMandatoryFieldsTest"/>
+          <include name="afterSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
           <include name="toCreateCampaignWithExpDateTest"/>

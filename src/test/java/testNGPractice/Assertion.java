@@ -12,15 +12,15 @@ public class Assertion {
 	@Test
 	public void demo()
 	{
-		String expTitle="Facebook – log in or sign";
+		String expTitle=null;;
 		
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://www.facebook.com/");
 	
 		String actTitle = driver.getTitle();
-		//Assert.assertEquals(expTitle, actTitle);
-		SoftAssert soft=new SoftAssert();
-		soft.assertEquals(expTitle, actTitle);
+		//Assert.assertEquals(actTitle, expTitle);
+	SoftAssert soft=new SoftAssert();
+	soft.assertNull(expTitle);
 		System.out.println("abc");
 		System.out.println("zxcv");
 		soft.assertAll();

@@ -9,8 +9,8 @@
           <include name="afterSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
-          <include name="toCreateProductTest"/>
           <include name="afterClass"/>
+          <include name="toCreateProductTest"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
         </methods>

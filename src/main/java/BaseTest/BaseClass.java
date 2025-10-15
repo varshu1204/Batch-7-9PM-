@@ -1,10 +1,13 @@
 package BaseTest;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -19,6 +22,7 @@ import ObjectRepositories.Homepage;
 import ObjectRepositories.LoginPage;
 import genericUtility.PropertiesFileUtility;
 import genericUtility.WebDriverUtility;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public WebDriver driver = null;
@@ -31,17 +35,21 @@ public class BaseClass {
 		System.out.println("DB connectivity open");
 	}
 
-	//@Parameters("BROWSER")
+	@Parameters("BROWSER")
 	@BeforeClass(groups = {"smoke","regression"})
-	public void beforeClass() throws IOException {
-		//String BROWSER=browser;
-		String BROWSER = putil.togetDataFromPropertiesFile("Browser");
+	public void beforeClass(String browser) throws IOException {
+		String BROWSER=browser;
+		//String BROWSER = putil.togetDataFromPropertiesFile("Browser");
 		
 		if (BROWSER.equals("Edge")) {
-
+			
 			driver = new EdgeDriver();
 		} else if (BROWSER.equals("Chrome")) {
-			driver = new ChromeDriver();
+			ChromeOptions settings = new ChromeOptions();
+			Map<String, Object> prefs = new HashMap<>();
+		    prefs.put("profile.password_manager_leak_detection", false);
+		    settings.setExperimentalOption("prefs", prefs);
+			driver = new ChromeDriver(settings);
 		} else if (BROWSER.equals("Firefox")) {
 			driver = new FirefoxDriver();
 		}
