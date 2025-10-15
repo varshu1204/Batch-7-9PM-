@@ -17,7 +17,7 @@ public class ToReadDataFromPropertiesFile {
 	public static void main(String[] args) throws IOException {
 
 	//create object of FIS
-		FileInputStream fis=new FileInputStream(".\\src\\test\\resources\\Commondata.properties");
+		FileInputStream fis=new FileInputStream("./src/test/resources/Commondata.properties");
 	
 	//obj of properties file
 		Properties prop=new Properties();

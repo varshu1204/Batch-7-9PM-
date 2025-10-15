@@ -3,19 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Campaign.CampaignTest">
+      <class name="testNGPractice.Assertion">
         <methods>
-          <include name="toCreateCampaignWithMandatoryFieldsTest"/>
-          <include name="afterSuite"/>
-          <include name="beforeMethod"/>
-          <include name="beforeClass"/>
-          <include name="toCreateCampaignWithExpDateTest"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="toCreateCampaignWithStatusTest"/>
-          <include name="afterMethod"/>
+          <include name="demo"/>
         </methods>
-      </class> <!-- Campaign.CampaignTest -->
+      </class> <!-- testNGPractice.Assertion -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
